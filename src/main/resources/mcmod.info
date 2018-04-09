@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rftpwroc",
+  "name": "RFTools Power / OC Integration",
+  "description": "RFTools Power / OC Integration",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["BrisingrAerowing"],
+  "credits": "BrisingrAerowing, McJty, and the OC Team",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
