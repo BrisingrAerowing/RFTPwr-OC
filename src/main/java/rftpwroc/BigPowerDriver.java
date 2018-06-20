@@ -13,7 +13,7 @@ public class BigPowerDriver implements DriverBlock {
 	public boolean worksWith(World world, BlockPos blockPos, EnumFacing enumFacing) {
 		TileEntity tile = world.getTileEntity(blockPos);
 
-		return tile != null && tile instanceof IBigPower;
+		return tile instanceof IBigPower;
 	}
 
 	@Override

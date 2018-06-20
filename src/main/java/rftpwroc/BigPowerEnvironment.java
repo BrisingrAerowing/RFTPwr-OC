@@ -1,7 +1,5 @@
 package rftpwroc;
 
-import li.cil.oc.api.Network;
-import li.cil.oc.api.network.Visibility;
 import li.cil.oc.api.prefab.AbstractManagedEnvironment;
 import li.cil.oc.api.driver.NamedBlock;
 import mcjty.lib.api.power.IBigPower;
@@ -29,15 +27,29 @@ public class BigPowerEnvironment extends AbstractManagedEnvironment implements N
 	}
 
 	@Callback(doc = "function():number - Gets the amount of energy stored.")
-	public Object[] getBigEnergy(final Context context, Arguments arguments)
+	public  Object[] getStoredPower(final Context context, Arguments arguments)
 	{
-		return new Object[] {power.getBigEnergy()};
+		return new Object[] {(double)power.getStoredPower() };
 	}
 
-	@Callback(doc = "function():number - Gets the maximum amount of energy")
+	@Callback(doc = "function():number - Gets the maximum amount of energy that can be stored.")
+	public Object[] getCapacity(final Context context, Arguments arguments)
+	{
+		return new Object[] {(double)power.getCapacity()};
+	}
+
+	@Deprecated
+	@Callback(doc = "function():number - Gets the amount of energy stored. Deprecated. Use getStoredPower instead ")
+	public Object[] getBigEnergy(final Context context, Arguments arguments)
+	{
+		return new Object[] {(double)power.getStoredPower()};
+	}
+
+	@Deprecated
+	@Callback(doc = "function():number - Gets the maximum amount of energy. Deprecated. Use getCapacity instead.")
 	public Object[] getBigMaxEnergy(final Context context, Arguments arguments)
 	{
-		return new Object[] {power.getBigMaxEnergy()};
+		return new Object[] {(double)power.getCapacity()};
 	}
 
 }
